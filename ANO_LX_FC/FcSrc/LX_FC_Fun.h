@@ -22,6 +22,7 @@ u8 OneKey_Flip(void);
 u8 OneKey_Return_Home(void);
 u8 Horizontal_Calibrate(void);
 u8 time_dly_cnt(u16 delay_ms);
+void Get_target_position(u16 distance_cm, u16 dir_angle_0_360);
 u8 XY_Compensate(s16 current_x, s16 target_x, s16 current_y, s16 target_y);
 u8 XY_Compensate_2(s16 current_x, s16 target_x, s16 current_y, s16 target_y);
 u8 Position_Compensate(void);
