@@ -20,48 +20,52 @@ typedef struct
   
 	lv_obj_t *screen;
 	bool screen_del;
-	lv_obj_t *screen_table;
-	lv_obj_t *screen_output;
-	lv_obj_t *screen_next;
-	lv_obj_t *screen_next_label;
-	lv_obj_t *screen_btn_1;
-	lv_obj_t *screen_btn_1_label;
+	lv_obj_t *screen_line_1;
+	lv_obj_t *screen_line_2;
+	lv_obj_t *screen_line_3;
+	lv_obj_t *screen_line_4;
+	lv_obj_t *screen_line_5;
+	lv_obj_t *screen_line_6;
+	lv_obj_t *screen_line_7;
+	lv_obj_t *screen_line_8;
+	lv_obj_t *screen_line_9;
+	lv_obj_t *screen_line_10;
+	lv_obj_t *screen_line_11;
+	lv_obj_t *screen_label_2;
+	lv_obj_t *screen_ban3;
+	lv_obj_t *screen_ban3_label;
+	lv_obj_t *screen_start_point;
+	lv_obj_t *screen_start_point_label;
 	lv_obj_t *screen_keyboard;
 	lv_obj_t *screen_input;
-	lv_obj_t *screen_label_1;
-	lv_obj_t *screen_label_2;
+	lv_obj_t *screen_line_19;
+	lv_obj_t *screen_line_20;
+	lv_obj_t *screen_line_21;
+	lv_obj_t *screen_line_22;
+	lv_obj_t *screen_line_23;
+	lv_obj_t *screen_line_24;
+	lv_obj_t *screen_line_25;
+	lv_obj_t *screen_label_3;
+	lv_obj_t *screen_ban2;
+	lv_obj_t *screen_ban2_label;
+	lv_obj_t *screen_ban1;
+	lv_obj_t *screen_ban1_label;
+	lv_obj_t *screen_next;
+	lv_obj_t *screen_next_label;
+	lv_obj_t *screen_run;
+	lv_obj_t *screen_run_label;
+	lv_obj_t *screen_label_4;
+	lv_obj_t *screen_label_5;
+	lv_obj_t *screen_label_6;
+	lv_obj_t *screen_label_7;
+	lv_obj_t *screen_label_8;
+	lv_obj_t *screen_label_9;
 	lv_obj_t *screen_1;
 	bool screen_1_del;
-	lv_obj_t *screen_1_label_3;
-	lv_obj_t *screen_1_back;
-	lv_obj_t *screen_1_back_label;
-	lv_obj_t *screen_1_line_1_2;
-	lv_obj_t *screen_1_line_2_2;
-	lv_obj_t *screen_1_line_3_2;
-	lv_obj_t *screen_1_line_4_2;
-	lv_obj_t *screen_1_line_1_1;
-	lv_obj_t *screen_1_line_2_1;
-	lv_obj_t *screen_1_line_3_1;
-	lv_obj_t *screen_1_line_4_1;
-	lv_obj_t *screen_1_line_1_3;
-	lv_obj_t *screen_1_line_2_3;
-	lv_obj_t *screen_1_line_3_3;
-	lv_obj_t *screen_1_line_4_3;
-	lv_obj_t *screen_1_line_1;
-	lv_obj_t *screen_1_line_2;
-	lv_obj_t *screen_1_label_1;
-	lv_obj_t *screen_1_label_2;
-	lv_obj_t *screen_1_label_4;
-	lv_obj_t *screen_1_label_5;
-	lv_obj_t *screen_1_label_6;
-	lv_obj_t *screen_1_label_7;
-	lv_obj_t *screen_1_label_8;
-	lv_obj_t *screen_1_output2;
-	lv_obj_t *screen_1_label_10;
-	lv_obj_t *screen_1_input2;
-	lv_obj_t *screen_1_label_9;
+	lv_obj_t *screen_1_table_1;
 	lv_obj_t *screen_1_btn_1;
 	lv_obj_t *screen_1_btn_1_label;
+	lv_obj_t *line[64];
 }lv_ui;
 
 typedef void (*ui_setup_scr_t)(lv_ui * ui);
@@ -87,11 +91,10 @@ extern lv_ui guider_ui;
 
 void setup_scr_screen(lv_ui *ui);
 void setup_scr_screen_1(lv_ui *ui);
-void esp_ap_init();
-LV_FONT_DECLARE(lv_font_montserratMedium_20)
-LV_FONT_DECLARE(lv_font_montserratMedium_12)
-LV_FONT_DECLARE(lv_font_montserratMedium_30)
+
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_montserratMedium_12)
+LV_FONT_DECLARE(lv_font_montserratMedium_20)
 
 
 #ifdef __cplusplus

@@ -14,13 +14,36 @@ extern "C" {
 #endif
 
 #include "gui_guider.h"
-//char num_data[4][6][4];
+
+#define ROWS 9
+#define COLS 7
+#define MAX_PATH_LEN (ROWS * COLS)
+
+typedef struct {
+    int grid[ROWS][COLS];
+    bool visited[ROWS][COLS];
+    int totalSteps;
+} Map;
+
+// 路径存储结构
+typedef struct {
+    int path[MAX_PATH_LEN][2];
+    int size;
+} Path;
+
+typedef struct {
+     int x[3];
+     int y[3];
+} Ban_Position;
+extern Ban_Position ban_position;
+void show_ban_position(const char *input, int num);
+void initMap(Map* map, Ban_Position ban_p);
+bool findPath(Map* map, Path* path, int startRow, int startCol);
+bool DFS(Map* map, Path* path, int r, int c, int step) ;
+void draw_line();
 void custom_init(lv_ui *ui);
-void slider_event_cb(int slider_val, lv_obj_t *table);
-void num_reset();
-void search_position(const char *input,int show_position);
-void send_position();
-void renovate_the_num(const char *num,lv_obj_t *table);
+void renovate_the_num(const char *data);
+
 #ifdef __cplusplus
 }
 #endif

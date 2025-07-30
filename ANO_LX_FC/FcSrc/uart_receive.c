@@ -4,7 +4,8 @@
 
 CircleInfo circle_data = {.x = 80, .y = 60};
 PositionInfo target_position = {.x = 0, .y = 0, .h = 0}, position_data;
-SearchInfo search_data;
+DirectionInfo direction_data[64];
+u8 total_step = 0;
 LidarInfo lidar_data;
 
 void processUART3Data(u8* data, u8 cmd);
@@ -59,8 +60,9 @@ void processUART3Data(u8* data, u8 cmd)
 					position_data.y = (data[2] << 8) | data[3];
 					break;
 			case CMD_SEARCH:
-					search_data.character = data[0];
-					search_data.num = data[1];
+					direction_data[total_step].step = data[0];
+					direction_data[total_step].dis = 50;
+					direction_data[total_step++].ang = (data[2] << 8) | data[3];
 					break;
 			case CMD_LAND:
 					circle_data.x = data[0];
@@ -81,12 +83,12 @@ void processUART3Data(u8* data, u8 cmd)
 		}
 }
 
-void pwm_turn(u8 cmd) // cmd=0x01->yaw    0x02->pitch 
+void return_step(u8 step)
 {
 		u8 uart2_send_data[4];
 		uart2_send_data[0] = 0xAA;
 		uart2_send_data[1] = 0x55;
-		uart2_send_data[2] = cmd;
+		uart2_send_data[2] = step;
 		uart2_send_data[3] = 0x5D;
 		
 		DrvUart2SendBuf(uart2_send_data, sizeof(uart2_send_data));

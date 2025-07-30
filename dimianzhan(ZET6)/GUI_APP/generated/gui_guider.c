@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include "gui_guider.h"
 #include "widgets_init.h"
-#include "usart.h"
+
 #if LV_USE_GUIDER_SIMULATOR && LV_USE_FREEMASTER
 #include "gg_external_data.h"
 #endif
@@ -85,28 +85,6 @@ void setup_ui(lv_ui *ui)
     init_keyboard(ui);
     setup_scr_screen(ui);
     lv_scr_load(ui->screen);
-}
-
-void esp_ap_init()
-{
-	__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);  //receive interrupt
-	__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);  //idle interrupt
-	__HAL_UART_ENABLE_IT(&huart3, UART_IT_RXNE);  //receive interrupt
-	__HAL_UART_ENABLE_IT(&huart3, UART_IT_IDLE);  //idle interrupt
-	uint8_t at1[] = "AT+CWMODE=2\r\n";
-	uint8_t at2[] = "AT+RST\r\n";
-	uint8_t at3[] = "AT+CWSAP=\"esp8266\",\"66666666\",1,3\r\n";
-	uint8_t at4[] = "AT+CIPMUX=1\r\n";
-	uint8_t at5[] = "AT+CIPSERVER=1,8086\r\n";
-	HAL_UART_Transmit(&huart3,at1,sizeof(at1),100);
-	HAL_Delay(1000);
-	HAL_UART_Transmit(&huart3,at2,sizeof(at2),100);
-	HAL_Delay(1000);
-	HAL_UART_Transmit(&huart3,at3,sizeof(at3),100);
-	HAL_Delay(1000);
-	HAL_UART_Transmit(&huart3,at4,sizeof(at4),100);
-	HAL_Delay(1000);
-	HAL_UART_Transmit(&huart3,at5,sizeof(at5),100);
 }
 
 void init_keyboard(lv_ui *ui)

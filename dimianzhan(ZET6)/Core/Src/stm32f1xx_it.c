@@ -236,25 +236,18 @@ void USART3_IRQHandler(void)
 	{
 			receive = huart3.Instance->DR;
 			
-			if(pdata[2] == '+' && pdata[3] == 'I' && pdata[11]<='9' && pdata[11]>='0')
+			if(pdata[2] == '+' && pdata[3] == 'I' && pdata[11]<='9' && pdata[11]>='0' && pdata[12]<='9' && pdata[12]>='0' && pdata[13]<='9' && pdata[13]>='0')
 			{
 				HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, GPIO_PIN_RESET);
 				char input_data[4];
 				input_data[0]=pdata[11];
-				if(pdata[12]<='9' && pdata[12]>='0')
-					input_data[1]=pdata[12];
+				input_data[1]=pdata[12];
+				input_data[1]=pdata[13];
 				const char *input = input_data;
-				renovate_the_num(input,guider_ui.screen_table);
+				renovate_the_num(input);
+				
 			}
 			HAL_UART_Transmit(&huart1,pdata,sizeof(pdata),100);	
-			if(pdata[2] == '+' && pdata[3] == 'I' && pdata[11]=='o' && pdata[12]=='k')
-			{
-					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET);
-					int tt=0;
-					for(volatile int i=0;i<10000;i++)
-							tt++;
-					HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
-			}
 			for(int i=0;i<=data_index;i++)
 				pdata[i]=0;
 			data_index=0;

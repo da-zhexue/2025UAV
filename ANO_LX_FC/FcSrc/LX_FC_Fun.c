@@ -25,6 +25,21 @@
 //基本功能函数
 //////////////////////////////////////////////////////////////////////
 //
+
+u8 main_task(void)
+{
+	static u8 task_step = 0;
+	while(task_step < total_step)
+	{
+			task_step += Horizontal_Move_delay(direction_data[task_step].dis, 25, direction_data[task_step].ang, 2000);
+			return_step(task_step);
+			if(task_step % 8 == 0)
+					Position_Compensate();
+	}
+	return_step(0xff);
+	return 1;
+}
+
 u8 FC_Unlock()
 {
 	//

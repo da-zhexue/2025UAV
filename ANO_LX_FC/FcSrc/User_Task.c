@@ -108,13 +108,13 @@ void UserTask_OneKeyCmd(void)
 				case 4:
 				{
 					//起飞
-					mission_step += OneKey_Takeoff(150);//参数单位：厘米； 0：默认上位机设置的高度。
+					mission_step += OneKey_Takeoff(120);//参数单位：厘米； 0：默认上位机设置的高度。
 				}
 				break;
 				case 5:
 				{
-					//等10秒
-					if(time_dly_cnt_ms<10000)
+					//等5秒
+					if(time_dly_cnt_ms<5000)
 					{
 						time_dly_cnt_ms+=20;//ms
 					}
@@ -127,92 +127,43 @@ void UserTask_OneKeyCmd(void)
 				break;
 				case 6:
 				{
-					//左移2米
-					mission_step += Horizontal_Move(250, 50, 270);
+					//主要任务
+					mission_step += main_task();
 				}
 				break;	
 				case 7:
 				{
-					//等10秒
-					if(time_dly_cnt_ms<8000)
-					{
-						time_dly_cnt_ms+=20;//ms
-					}
-					else
-					{
-						time_dly_cnt_ms = 0;
-						mission_step += 1;
-					}	
+					mission_step++;
 				}
 				break;
 				case 8:
 				{
-					//前移3米
-					mission_step += Horizontal_Move(350, 50, 0);
+					mission_step++;
 				}
 				break;
 				case 9:
 				{
-					//等10秒
-					if(time_dly_cnt_ms<10000)
-					{
-						time_dly_cnt_ms+=20;//ms
-					}
-					else
-					{
-						time_dly_cnt_ms = 0;
-						mission_step += 1;
-					}						
+					mission_step++;
 				}
 				break;
 				case 10:
 				{
-					s16 move_x = circle_data.x - 80;
-					if(move_x >= 5)
-						mission_step += Horizontal_Move(move_x, 15, 90);
-					else if(move_x <= -5)
-						mission_step += Horizontal_Move(move_x*(-1), 15, 270);
-					else 
-						mission_step++;
+					mission_step++;
 				}
 				break;	
 				case 11:
 				{
-					//等3秒
-					if(time_dly_cnt_ms<4000)
-					{
-						time_dly_cnt_ms+=20;//ms
-					}
-					else
-					{
-						time_dly_cnt_ms = 0;
-						mission_step += 1;
-					}			
+					mission_step++;
 				}
 				break;
 				case 12:
 				{
-					s16 move_y = circle_data.y - 60;
-					if(move_y >= 5)
-						mission_step += Horizontal_Move(move_y, 15, 180);
-					else if(move_y <= -5)
-						mission_step += Horizontal_Move(move_y*(-1), 15, 0);
-					else 
-						mission_step++;
+					mission_step++;
 				}
 				break;
 				case 13:
 				{
-					//等3秒
-					if(time_dly_cnt_ms<4000)
-					{
-						time_dly_cnt_ms+=20;//ms
-					}
-					else
-					{
-						time_dly_cnt_ms = 0;
-						mission_step += 1;
-					}			
+					mission_step++;
 				}
 				break;
 				case 14:

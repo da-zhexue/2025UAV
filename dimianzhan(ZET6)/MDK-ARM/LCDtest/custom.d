@@ -1,8 +1,5 @@
 lcdtest\custom.o: ..\GUI_APP\custom\custom.c
 lcdtest\custom.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
-lcdtest\custom.o: D:\keil5\ARM\ARMCC\Bin\..\include\math.h
-lcdtest\custom.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-lcdtest\custom.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
 lcdtest\custom.o: ../GUI/lvgl/lvgl.h
 lcdtest\custom.o: ../GUI/lvgl/src/misc/lv_log.h
 lcdtest\custom.o: ../GUI/lvgl/src/misc/../lv_conf_internal.h
@@ -16,6 +13,7 @@ lcdtest\custom.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
 lcdtest\custom.o: ../GUI/lvgl/src/misc/lv_math.h
 lcdtest\custom.o: ../GUI/lvgl/src/misc/lv_mem.h
 lcdtest\custom.o: D:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+lcdtest\custom.o: D:\keil5\ARM\ARMCC\Bin\..\include\string.h
 lcdtest\custom.o: ../GUI/lvgl/src/misc/lv_async.h
 lcdtest\custom.o: ../GUI/lvgl/src/misc/lv_anim_timeline.h
 lcdtest\custom.o: ../GUI/lvgl/src/misc/lv_anim.h
@@ -133,7 +131,7 @@ lcdtest\custom.o: ../GUI/lvgl/src/extra/widgets/imgbtn/lv_imgbtn.h
 lcdtest\custom.o: ../GUI/lvgl/src/extra/widgets/span/lv_span.h
 lcdtest\custom.o: ..\GUI_APP\custom\custom.h
 lcdtest\custom.o: ../GUI_APP/generated/gui_guider.h
-lcdtest\custom.o: ../Core/Inc/usart.h
+lcdtest\custom.o: ../Core/Inc/gpio.h
 lcdtest\custom.o: ../Core/Inc/main.h
 lcdtest\custom.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 lcdtest\custom.o: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -163,3 +161,4 @@ lcdtest\custom.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 lcdtest\custom.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 lcdtest\custom.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 lcdtest\custom.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+lcdtest\custom.o: ../Core/Inc/usart.h

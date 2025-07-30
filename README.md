@@ -1,7 +1,12 @@
-飞控:(x)(√)  
-主控板:(x)(√)  
-OPENMV:(x)(√)  
-地面站:？(x)(√)
+飞控: 接收数据开始遍历(√)   雷达补偿(?)   高度补偿(要吗)   返回当前坐标信息(√)    
+主控板: 向飞控发送遍历路径(√)   转发OPENMV数据到地面站(√)   控制激光笔开关(√)(对动物激光笔PA1、指航线激光笔PC1)  
+OPENMV: 识别动物(x)   向主控板发数据(0xAA 0x55 (动物) 0x5D)(x)    
+地面站: 向主控发送遍历路径(√)   接收数据显示结果(√)  
 
-拉取代码可能要git pull origin master?  
-推送代码可能要git push origin master?
+（要测测WIFI通信）  
+
+&nbsp; 
+
+拉取代码可能要git pull origin master?     
+推送代码可能要git push origin master?  
+

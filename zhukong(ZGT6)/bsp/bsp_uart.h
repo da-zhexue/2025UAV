@@ -10,11 +10,14 @@
 #define LD_F_LEN2        7     //÷°≥§∂»1
 typedef struct
 {
-	uint16_t    angle;         //Ω«∂»
-	uint16_t    distance;      //æ‡¿Î
+	uint8_t    angle;         //Ω«∂»
+	uint8_t    distance;      //æ‡¿Î
 
 }LidarDataTypeDef;
-//extern LidarDataTypeDef lidardata[4];
+typedef struct
+{
+	uint16_t x, y;
+}PositionTypeDef;
 
 void send_height(uint16_t height);
 

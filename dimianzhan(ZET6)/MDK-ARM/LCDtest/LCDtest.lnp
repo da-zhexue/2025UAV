@@ -145,7 +145,7 @@
 "lcdtest\lv_font_montserrat_26.o"
 "lcdtest\lv_font_montserrat_28.o"
 "lcdtest\lv_font_montserrat_28_compressed.o"
-"lcdtest\lv_font_montserrat_30.o"
+"lcdtest\lv_font_montserrat_30_1.o"
 "lcdtest\lv_font_montserrat_32.o"
 "lcdtest\lv_font_montserrat_34.o"
 "lcdtest\lv_font_montserrat_36.o"
@@ -214,7 +214,6 @@
 "lcdtest\widgets_init.o"
 "lcdtest\custom.o"
 "lcdtest\lv_font_montserratmedium_20.o"
-"lcdtest\lv_font_montserratmedium_30.o"
 "lcdtest\lv_font_montserratmedium_16.o"
 --library_type=microlib --strict --scatter "LCDtest\LCDtest.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

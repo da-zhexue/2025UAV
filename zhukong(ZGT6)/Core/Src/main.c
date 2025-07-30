@@ -42,7 +42,7 @@ void esp_ap_init()
 	//uart4:  STP_23 Laser             TX:C10 RX:C11
 	//usart6: Raspberry Pi or Laser    TX:C6  RX:C7
 	
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
+	//HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
 	__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);  //receive interrupt6
 	__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);  //idle interrupt
 	__HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);  //receive interrupt
@@ -149,8 +149,8 @@ int main(void)
   MX_UART4_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-	pwm_on();
-	pwm_pitch();
+//	pwm_on();
+//	pwm_pitch();
 	esp_ap_init();
   /* USER CODE END 2 */
 
@@ -163,10 +163,10 @@ int main(void)
     /* USER CODE BEGIN 3 */
 		if(HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_1) == GPIO_PIN_SET)
 		{
-			HAL_Delay(500);
+			HAL_Delay(1000);
 			HAL_GPIO_WritePin(GPIOA,GPIO_PIN_1,GPIO_PIN_RESET);
 		}
-    HAL_Delay(100);
+    //HAL_Delay(100);
     //send_height(distance);
 		//printf("distance: %d \n", distance);
   }

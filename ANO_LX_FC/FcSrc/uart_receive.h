@@ -6,7 +6,7 @@
 #define CMD_HEIGHT_GET       0x01  // 辅助定高
 #define CMD_XY_GET            0x02  // 辅助定位X、Y
 //#define CMD_Y_GET            0x03  // 辅助定位Y
-#define CMD_SEARCH           0x04  // 定向查找货物
+#define CMD_SEARCH           0x04  // 路径规划
 #define CMD_LAND             0x05  // 辅助降落
 #define CMD_OBSTACLE_AVOID_1 0x06  // 避障(0°和90°)
 #define CMD_OBSTACLE_AVOID_2 0x07  // 避障(180°和270°)
@@ -32,9 +32,10 @@ typedef struct{
 	u16 h;
 } PositionInfo; // 当前位置信息
 typedef struct{
-	u8 character;
-	u8 num;
-} SearchInfo;
+	u16 ang;
+	u16 dis;
+	u8 step;
+} DirectionInfo;
 typedef struct{
 	u16 dis[4];
 	u16 min_ang;
@@ -42,9 +43,11 @@ typedef struct{
 } LidarInfo;
 extern CircleInfo circle_data;
 extern PositionInfo target_position, position_data;
-extern SearchInfo search_data;
+extern DirectionInfo direction_data[64];
 extern LidarInfo lidar_data;
+extern u8 total_step;
 
 void UART3_DataParser(u8 data);
+void return_step(u8 step);
 
 #endif

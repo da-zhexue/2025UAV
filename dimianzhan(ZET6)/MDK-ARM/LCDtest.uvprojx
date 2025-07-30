@@ -1732,11 +1732,6 @@
               <FilePath>..\GUI_APP\generated\guider_fonts\lv_font_montserratMedium_20.c</FilePath>
             </File>
             <File>
-              <FileName>lv_font_montserratMedium_30.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\GUI_APP\generated\guider_fonts\lv_font_montserratMedium_30.c</FilePath>
-            </File>
-            <File>
               <FileName>lv_font_montserratMedium_16.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\GUI_APP\generated\guider_fonts\lv_font_montserratMedium_16.c</FilePath>

@@ -2,27 +2,23 @@
 #include "bsp_uart.h"
 #include "bsp_pwm.h"
 
-uint8_t esp_data[128];
+uint8_t esp_data[256];
 uint8_t drone_data[128];
 uint8_t openmv_data[128];
-int data_index=0;
-int entryCount=0;
+int esp_data_index=0;
+int drone_data_index=0;
+int openmv_data_index=0;
 uint8_t uart6_rx_con=0;
 uint8_t uart6_rx_buf[128];
-char storage[32][8];
+PositionTypeDef position_data[64];
+PositionTypeDef current_position;
 
-uint8_t at1[] = "AT+CIPSEND=3\r\n";
-uint8_t at2[] = "AT+CIPSEND=4\r\n";
-uint16_t search_for_size(uint8_t *input) 
-{
-    return (input[1] >= '0' && input[1] <= '9') ? 2 : 1;
-}
 void send_height(uint16_t height)
 {
 		uint8_t send_data[8];
     send_data[0] = 0xAA; // 帧头1
 		send_data[1] = 0x55; // 帧头2
-		send_data[2] = 0x01; // 指令位 0x01:高度 0x02:X、Y  0x04:货物位置 (如果x、y为uint16_t则0x02同时发送x、y) 0x05:openmv辅助降落信息 
+		send_data[2] = 0x01; // 指令位 0x01:高度 0x02:X、Y  0x04:路径规划 0x05:openmv辅助降落信息 
     send_data[3] = (height >> 8) & 0xff; // 数据位1
     send_data[4] = height & 0xff; // 数据位2
 		send_data[5] = 0x00; // 数据位3
@@ -35,7 +31,7 @@ void send_xy(int16_t x, int16_t y)
 		uint8_t send_data[8];
     send_data[0] = 0xAA; // 帧头1
 		send_data[1] = 0x55; // 帧头2
-		send_data[2] = 0x02; // 指令位 0x01:高度 0x02:X、Y  0x04:货物位置 (如果x、y为uint16_t则0x02同时发送x、y) 0x05:openmv辅助降落信息 
+		send_data[2] = 0x02; // 指令位 0x01:高度 0x02:X、Y  0x04:路径规划 0x05:openmv辅助降落信息 
     send_data[3] = (x >> 8) & 0xff; // 数据位1
     send_data[4] = x & 0xff; // 数据位2
 		send_data[5] = (y >> 8) & 0xff; // 数据位3
@@ -85,34 +81,48 @@ void USART1_IRQHandler(void)
 	{
 			receive = huart1.Instance->DR;
 			
-			esp_data[data_index++]=receive;
+			esp_data[esp_data_index++]=receive;
 		
 	}
 	//idle interrupt �����ж�
 	else if(huart1.Instance->SR & UART_FLAG_IDLE)
 	{
 			receive = huart1.Instance->DR;
-			if(esp_data[2] == '+' && esp_data[3] == 'I' && esp_data[9]<='D' && esp_data[9]>='A' && esp_data[10]<='9' && esp_data[10]>='0')
+			if(esp_data[2] == '+' && esp_data[3] == 'I' && esp_data[11] == 0xAA && esp_data[12] == 0x55 && esp_data[138] == 0x5D)
 			{
-				HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
+				uint8_t step = esp_data[13];
 				uint8_t transform_data[8];
-				transform_data[0] = 0xAA;
-				transform_data[1] = 0x55;
-				transform_data[2] = 0x04;
-				transform_data[3] = esp_data[9];
-				transform_data[4] = esp_data[10];
-				transform_data[5] = 0x00;
-				transform_data[6] = 0x00;
-				transform_data[7] = 0x5D;
-				HAL_UART_Transmit(&huart2,transform_data,sizeof(transform_data),100);
-				int tt=0;
-					for(volatile int i=0;i<10000;i++)
-							tt++;
+				for(int i = 0; i < step; i++)
+				{
+						position_data[i].x = esp_data[i*2 + 14];
+						position_data[i].y = esp_data[i*2 + 15];
+						if(i > 0)
+						{
+							uint16_t ang = 0;
+							int dis = position_data[i].x - position_data[i-1].x;
+							if(dis > 0) ang = 180;
+							else if(dis < 0){ ang = 0; dis=-dis;}
+							else{
+									dis = position_data[i].y - position_data[i-1].y;
+									if(dis > 0) ang = 270;
+									else{ ang = 90; dis=-dis;}
+							}
+							transform_data[0] = 0xAA;
+							transform_data[1] = 0x55;
+							transform_data[2] = 0x04;
+							transform_data[3] = (i - 1) & 0xff;
+							transform_data[4] = 0x32;
+							transform_data[5] = (ang >> 8) & 0xff;
+							transform_data[6] = ang & 0xff;
+							transform_data[7] = 0x5D;
+							HAL_UART_Transmit(&huart2,transform_data,sizeof(transform_data),100);
+						}
+				}
+				HAL_GPIO_WritePin(GPIOC,GPIO_PIN_1,GPIO_PIN_SET);
 			}
-			//HAL_UART_Transmit(&huart2,esp_data,sizeof(esp_data),100);
-			for(int i=0;i<=data_index;i++)
+			for(int i=0;i<=esp_data_index;i++)
 				esp_data[i]=0;
-			data_index=0;
+			esp_data_index=0;
 	}
 }
 
@@ -124,7 +134,7 @@ void USART2_IRQHandler(void)
 	if(huart2.Instance->SR & UART_FLAG_RXNE)
 	{
 			receive = huart2.Instance->DR;
-			drone_data[data_index++]=receive;
+			drone_data[drone_data_index++]=receive;
 		
 	}
 	//idle interrupt �����ж�
@@ -133,10 +143,13 @@ void USART2_IRQHandler(void)
 			receive = huart2.Instance->DR;
 			if(drone_data[0] == 0xAA && drone_data[1] == 0x55 && drone_data[3] == 0x5D)
 			{
-					if(drone_data[2] == 0x01)
-							pwm_yaw();
-					else if(drone_data[2] == 0x02)
-							pwm_pitch();
+					if(drone_data[2] != 0xff)
+					{
+							current_position.x = position_data[drone_data[2]].x;
+							current_position.y = position_data[drone_data[2]].y;
+					}
+					else 
+							HAL_GPIO_WritePin(GPIOC,GPIO_PIN_1,GPIO_PIN_RESET);
 			}
 	}
 }
@@ -150,29 +163,32 @@ void USART3_IRQHandler(void)
 	{
 			receive = huart3.Instance->DR;
 			
-			openmv_data[data_index++]=receive;
+			openmv_data[openmv_data_index++]=receive;
 		
 	}
 	//idle interrupt �����ж�
 	else if(huart3.Instance->SR & UART_FLAG_IDLE)
 	{
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
 			receive = huart3.Instance->DR;
-			uint16_t flag = search_for_size(openmv_data);
-			openmv_data[data_index++]='\r';
-			openmv_data[data_index++]='\n';
-			if(flag==1)
-					HAL_UART_Transmit(&huart1,at1,sizeof(at1),100);
-			else 
-					HAL_UART_Transmit(&huart1,at2,sizeof(at2),100);
-			int tt=0;
-			for(volatile int i=0;i<10000;i++)
-					tt++;
-			HAL_UART_Transmit(&huart1,openmv_data,sizeof(openmv_data),100);	
-			for(int i=0;i<=data_index;i++)
+			uint8_t message_to_station[5];
+			if(openmv_data[0] == 0xAA && openmv_data[1] == 0x55 && openmv_data[3] == 0x5D)
+			{
+					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
+					message_to_station[0] = openmv_data[2];
+					message_to_station[1] = current_position.x;
+					message_to_station[2] = current_position.y;
+					message_to_station[3] = '\r';
+					message_to_station[4] = '\n';
+					uint8_t at1[] = "AT+CIPSEND=5\r\n";
+					HAL_UART_Transmit(&huart1,at1,sizeof(at1),100); // 0:Elephant  1:Tiger  2:Wolf  3:Monkey  4:Peacock
+					int tt=0;
+					for(volatile int i=0;i<10000;i++)
+							tt++;
+					HAL_UART_Transmit(&huart1,message_to_station,sizeof(message_to_station),100);	
+			}
+			for(int i=0;i<=openmv_data_index;i++)
 					openmv_data[i]=0;
-			data_index = 0;
-      //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
+			openmv_data_index = 0;
 	}
 }
 

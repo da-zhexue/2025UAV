@@ -258,9 +258,9 @@ void UART4_IRQHandler(void)
   /* USER CODE END UART4_IRQn 1 */
 }
 
-///**
-//  * @brief This function handles USART6 global interrupt.
-//  */
+/**
+  * @brief This function handles USART6 global interrupt.
+  */
 //void USART6_IRQHandler(void)
 //{
 //  /* USER CODE BEGIN USART6_IRQn 0 */

@@ -12,6 +12,7 @@
 //static
 
 //public
+u8 main_task(void);
 u8 FC_Unlock(void);
 u8 FC_Lock(void);
 u8 LX_Change_Mode(u8 new_mode);
