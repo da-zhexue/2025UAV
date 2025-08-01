@@ -63,6 +63,7 @@ void processUART3Data(u8* data, u8 cmd)
 					direction_data[total_step].step = data[0];
 					direction_data[total_step].dis = 50;
 					direction_data[total_step++].ang = (data[2] << 8) | data[3];
+					total_step++;
 					break;
 			case CMD_LAND:
 					circle_data.x = data[0];

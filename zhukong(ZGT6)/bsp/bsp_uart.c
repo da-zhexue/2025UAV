@@ -24,7 +24,7 @@ void send_height(uint16_t height)
 		send_data[5] = 0x00; // 数据位3
 		send_data[6] = 0x00; // 数据位4
     send_data[7] = 0x5D; // 帧尾
-    HAL_UART_Transmit(&huart2, send_data, 8, 0xffff);
+    //HAL_UART_Transmit(&huart2, send_data, 8, 0xffff);
 }
 void send_xy(int16_t x, int16_t y)
 {
@@ -180,7 +180,7 @@ void USART3_IRQHandler(void)
 					message_to_station[3] = '\r';
 					message_to_station[4] = '\n';
 					uint8_t at1[] = "AT+CIPSEND=5\r\n";
-					HAL_UART_Transmit(&huart1,at1,sizeof(at1),100); // 0:Elephant  1:Tiger  2:Wolf  3:Monkey  4:Peacock
+					HAL_UART_Transmit(&huart1,at1,sizeof(at1),100); // 1:Elephant  2:monkey  3:peacock  4:tiger  5:wolf
 					int tt=0;
 					for(volatile int i=0;i<10000;i++)
 							tt++;

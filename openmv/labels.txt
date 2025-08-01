@@ -1,0 +1,6 @@
+background
+elephant
+monkey
+peacock
+tiger
+wolf
