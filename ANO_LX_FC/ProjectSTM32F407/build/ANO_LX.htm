@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\build\ANO_LX.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\build\ANO_LX.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Jul 31 11:30:42 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Aug 01 13:22:13 2025
 <BR><P>
-<H3>Maximum Stack Usage =        296 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        304 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 Loop_50Hz &rArr; UserTask_OneKeyCmd &rArr; main_task &rArr; Get_target_position &rArr; my_cos &rArr; my_sin &rArr; mx_sin &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
 <P>
@@ -400,7 +400,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6c]"></a>UserTask_OneKeyCmd</STRONG> (Thumb, 464 bytes, Stack size 8 bytes, user_task.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = UserTask_OneKeyCmd &rArr; main_task &rArr; Get_target_position &rArr; my_cos &rArr; my_sin &rArr; mx_sin &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
+<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = UserTask_OneKeyCmd &rArr; main_task &rArr; Get_target_position &rArr; my_cos &rArr; my_sin &rArr; mx_sin &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_task
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OneKey_Takeoff
@@ -518,8 +518,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_task
 </UL>
 
-<P><STRONG><a name="[92]"></a>Get_target_position</STRONG> (Thumb, 178 bytes, Stack size 64 bytes, lx_fc_fun.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = Get_target_position &rArr; my_cos &rArr; my_sin &rArr; mx_sin &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
+<P><STRONG><a name="[92]"></a>Get_target_position</STRONG> (Thumb, 208 bytes, Stack size 72 bytes, lx_fc_fun.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = Get_target_position &rArr; my_cos &rArr; my_sin &rArr; mx_sin &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_sin
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;my_cos
@@ -541,7 +541,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[72]"></a>main_task</STRONG> (Thumb, 136 bytes, Stack size 8 bytes, lx_fc_fun.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = main_task &rArr; Get_target_position &rArr; my_cos &rArr; my_sin &rArr; mx_sin &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
+<BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = main_task &rArr; Get_target_position &rArr; my_cos &rArr; my_sin &rArr; mx_sin &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;return_step
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Horizontal_Move_delay
@@ -568,7 +568,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LX_Unlock_Lock_Check
 </UL>
 
-<P><STRONG><a name="[70]"></a>LX_Change_Mode</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, lx_fc_fun.o(.text))
+<P><STRONG><a name="[70]"></a>LX_Change_Mode</STRONG> (Thumb, 130 bytes, Stack size 8 bytes, lx_fc_fun.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LX_Change_Mode
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CMD_Send
@@ -2996,7 +2996,7 @@ Global Symbols
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Sbus_IRQH
 </UL>
 
-<P><STRONG><a name="[1e6]"></a>processUART3Data</STRONG> (Thumb, 224 bytes, Stack size 12 bytes, uart_receive.o(.text))
+<P><STRONG><a name="[1e6]"></a>processUART3Data</STRONG> (Thumb, 234 bytes, Stack size 12 bytes, uart_receive.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = processUART3Data
 </UL>
 <BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART3_DataParser
@@ -3196,7 +3196,7 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> ano_scheduler.o(.data)
 </UL>
 <P><STRONG><a name="[5]"></a>Loop_50Hz</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, ano_scheduler.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = Loop_50Hz &rArr; UserTask_OneKeyCmd &rArr; main_task &rArr; Get_target_position &rArr; my_cos &rArr; my_sin &rArr; mx_sin &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
+<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = Loop_50Hz &rArr; UserTask_OneKeyCmd &rArr; main_task &rArr; Get_target_position &rArr; my_cos &rArr; my_sin &rArr; mx_sin &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UserTask_OneKeyCmd
 </UL>

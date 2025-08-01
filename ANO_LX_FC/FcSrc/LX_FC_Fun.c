@@ -130,12 +130,13 @@ u8 OneKey_Return_Home()
 
 //获得目标位置
 void Get_target_position(u16 distance_cm, u16 dir_angle_0_360)
-{
-	double dx_double = (double)distance_cm * my_cos((double)dir_angle_0_360);
-	double dy_double = (double)distance_cm * (-my_sin((double)dir_angle_0_360));
+{    u16 rad=dir_angle_0_360*RAD_PER_DEG;
+	double dx_double = (double)distance_cm * (double)my_cos(rad);
+	double dy_double = (double)distance_cm * (-(double)(my_sin(rad)));
 	target_position.x += (u16)dx_double;
 	target_position.y += (u16)dy_double;
 }
+
 
 //延时封装
 u8 time_dly_cnt(u16 delay_ms)
