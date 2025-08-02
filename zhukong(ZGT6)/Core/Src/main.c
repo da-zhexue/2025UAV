@@ -57,9 +57,10 @@ void esp_ap_init()
 	uint8_t at2[] = "AT+RST\r\n";
 	uint8_t at3[] = "AT+CWJAP=\"esp8266\",\"66666666\"\r\n";
 	uint8_t at4[] = "AT+CIPMUX=0\r\n";
-	uint8_t at5[] = "AT+CIPSTART=\"TCP\",\"192.168.4.1\",8086\r\n";
-	uint8_t at7[] = "AT+CIPSEND=4\r\n";
-	uint8_t at8[] = "okok\r\n";
+	uint8_t at5[] = "AT+CIPMODE=1\r\n";
+	uint8_t at6[] = "AT+CIPSTART=\"TCP\",\"192.168.4.1\",8086\r\n";
+	uint8_t at7[] = "AT+CIPSEND\r\n";
+	//uint8_t at8[] = "okok\r\n";
 	HAL_UART_Transmit(&huart1,at1,sizeof(at1),100);
 	HAL_Delay(1000);
 	HAL_UART_Transmit(&huart1,at2,sizeof(at2),100);
@@ -70,9 +71,9 @@ void esp_ap_init()
 	HAL_Delay(3000);
 	HAL_UART_Transmit(&huart1,at5,sizeof(at5),100);
 	HAL_Delay(5000);
-	HAL_UART_Transmit(&huart1,at7,sizeof(at7),100);
+	HAL_UART_Transmit(&huart1,at6,sizeof(at6),100);
 	HAL_Delay(1000);
-	HAL_UART_Transmit(&huart1,at8,sizeof(at8),100);
+	HAL_UART_Transmit(&huart1,at7,sizeof(at7),100);
 //	HAL_Delay(3000);
 //	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
 }	

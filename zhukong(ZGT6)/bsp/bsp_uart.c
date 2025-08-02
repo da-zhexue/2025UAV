@@ -88,14 +88,14 @@ void USART1_IRQHandler(void)
 	else if(huart1.Instance->SR & UART_FLAG_IDLE)
 	{
 			receive = huart1.Instance->DR;
-			if(esp_data[2] == '+' && esp_data[3] == 'I' && esp_data[11] == 0xAA && esp_data[12] == 0x55 && esp_data[138] == 0x5D)
+			if(esp_data[0] == 0xAA && esp_data[1] == 0x55 && esp_data[125] == 0x5D)
 			{
-				uint8_t step = esp_data[13];
+				uint8_t step = esp_data[2];
 				uint8_t transform_data[8];
 				for(int i = 0; i < step; i++)
 				{
-						position_data[i].x = esp_data[i*2 + 14];
-						position_data[i].y = esp_data[i*2 + 15];
+						position_data[i].x = esp_data[i*2];
+						position_data[i].y = esp_data[i*2 + 1];
 						if(i > 0)
 						{
 							uint16_t ang = 0;

@@ -1107,24 +1107,24 @@ Image Symbol Table
     i.UART_WaitOnFlagUntilTimeout            0x08001eea   Section        0  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
     UART_WaitOnFlagUntilTimeout              0x08001eeb   Thumb Code   114  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
     i.USART1_IRQHandler                      0x08001f5c   Section        0  bsp_uart.o(i.USART1_IRQHandler)
-    i.USART2_IRQHandler                      0x08002074   Section        0  bsp_uart.o(i.USART2_IRQHandler)
-    i.USART3_IRQHandler                      0x080020f4   Section        0  bsp_uart.o(i.USART3_IRQHandler)
-    i.USART6_IRQHandler                      0x080021d4   Section        0  bsp_uart.o(i.USART6_IRQHandler)
-    i.UsageFault_Handler                     0x080022e4   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
-    i.__NVIC_SetPriority                     0x080022e6   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x080022e7   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.__scatterload_copy                     0x08002306   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08002314   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08002316   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.data_process                           0x08002324   Section        0  stp23.o(i.data_process)
-    i.esp_ap_init                            0x080023c8   Section        0  main.o(i.esp_ap_init)
-    i.main                                   0x0800258c   Section        0  main.o(i.main)
-    i.send_lidar_data                        0x080025dc   Section        0  bsp_uart.o(i.send_lidar_data)
-    i.send_obstacle                          0x0800264c   Section        0  bsp_uart.o(i.send_obstacle)
-    i.send_xy                                0x08002690   Section        0  bsp_uart.o(i.send_xy)
-    i.uart4_init                             0x080026d4   Section        0  stp23.o(i.uart4_init)
-    .constdata                               0x080026e8   Section       16  system_stm32f4xx.o(.constdata)
-    .constdata                               0x080026f8   Section        8  system_stm32f4xx.o(.constdata)
+    i.USART2_IRQHandler                      0x08002068   Section        0  bsp_uart.o(i.USART2_IRQHandler)
+    i.USART3_IRQHandler                      0x080020e8   Section        0  bsp_uart.o(i.USART3_IRQHandler)
+    i.USART6_IRQHandler                      0x080021c8   Section        0  bsp_uart.o(i.USART6_IRQHandler)
+    i.UsageFault_Handler                     0x080022d8   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
+    i.__NVIC_SetPriority                     0x080022da   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x080022db   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.__scatterload_copy                     0x080022fa   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08002308   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0800230a   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.data_process                           0x08002318   Section        0  stp23.o(i.data_process)
+    i.esp_ap_init                            0x080023bc   Section        0  main.o(i.esp_ap_init)
+    i.main                                   0x08002588   Section        0  main.o(i.main)
+    i.send_lidar_data                        0x080025d8   Section        0  bsp_uart.o(i.send_lidar_data)
+    i.send_obstacle                          0x08002648   Section        0  bsp_uart.o(i.send_obstacle)
+    i.send_xy                                0x0800268c   Section        0  bsp_uart.o(i.send_xy)
+    i.uart4_init                             0x080026d0   Section        0  stp23.o(i.uart4_init)
+    .constdata                               0x080026e4   Section       16  system_stm32f4xx.o(.constdata)
+    .constdata                               0x080026f4   Section        8  system_stm32f4xx.o(.constdata)
     .data                                    0x20000000   Section       12  stm32f4xx_hal.o(.data)
     .data                                    0x2000000c   Section        4  system_stm32f4xx.o(.data)
     .data                                    0x20000010   Section       20  bsp_uart.o(.data)
@@ -1318,25 +1318,25 @@ Image Symbol Table
     TIM_OC2_SetConfig                        0x08001b59   Thumb Code    98  stm32f4xx_hal_tim.o(i.TIM_OC2_SetConfig)
     UART4_IRQHandler                         0x08001c7d   Thumb Code     6  stm32f4xx_it.o(i.UART4_IRQHandler)
     UART_Start_Receive_IT                    0x08001eb5   Thumb Code    54  stm32f4xx_hal_uart.o(i.UART_Start_Receive_IT)
-    USART1_IRQHandler                        0x08001f5d   Thumb Code   254  bsp_uart.o(i.USART1_IRQHandler)
-    USART2_IRQHandler                        0x08002075   Thumb Code   108  bsp_uart.o(i.USART2_IRQHandler)
-    USART3_IRQHandler                        0x080020f5   Thumb Code   186  bsp_uart.o(i.USART3_IRQHandler)
-    USART6_IRQHandler                        0x080021d5   Thumb Code   260  bsp_uart.o(i.USART6_IRQHandler)
-    UsageFault_Handler                       0x080022e5   Thumb Code     2  stm32f4xx_it.o(i.UsageFault_Handler)
-    __scatterload_copy                       0x08002307   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08002315   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08002317   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    data_process                             0x08002325   Thumb Code   156  stp23.o(i.data_process)
-    esp_ap_init                              0x080023c9   Thumb Code   294  main.o(i.esp_ap_init)
-    main                                     0x0800258d   Thumb Code    76  main.o(i.main)
-    send_lidar_data                          0x080025dd   Thumb Code   106  bsp_uart.o(i.send_lidar_data)
-    send_obstacle                            0x0800264d   Thumb Code    62  bsp_uart.o(i.send_obstacle)
-    send_xy                                  0x08002691   Thumb Code    62  bsp_uart.o(i.send_xy)
-    uart4_init                               0x080026d5   Thumb Code    10  stp23.o(i.uart4_init)
-    AHBPrescTable                            0x080026e8   Data          16  system_stm32f4xx.o(.constdata)
-    APBPrescTable                            0x080026f8   Data           8  system_stm32f4xx.o(.constdata)
-    Region$$Table$$Base                      0x08002700   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08002720   Number         0  anon$$obj.o(Region$$Table)
+    USART1_IRQHandler                        0x08001f5d   Thumb Code   244  bsp_uart.o(i.USART1_IRQHandler)
+    USART2_IRQHandler                        0x08002069   Thumb Code   108  bsp_uart.o(i.USART2_IRQHandler)
+    USART3_IRQHandler                        0x080020e9   Thumb Code   186  bsp_uart.o(i.USART3_IRQHandler)
+    USART6_IRQHandler                        0x080021c9   Thumb Code   260  bsp_uart.o(i.USART6_IRQHandler)
+    UsageFault_Handler                       0x080022d9   Thumb Code     2  stm32f4xx_it.o(i.UsageFault_Handler)
+    __scatterload_copy                       0x080022fb   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08002309   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0800230b   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    data_process                             0x08002319   Thumb Code   156  stp23.o(i.data_process)
+    esp_ap_init                              0x080023bd   Thumb Code   294  main.o(i.esp_ap_init)
+    main                                     0x08002589   Thumb Code    76  main.o(i.main)
+    send_lidar_data                          0x080025d9   Thumb Code   106  bsp_uart.o(i.send_lidar_data)
+    send_obstacle                            0x08002649   Thumb Code    62  bsp_uart.o(i.send_obstacle)
+    send_xy                                  0x0800268d   Thumb Code    62  bsp_uart.o(i.send_xy)
+    uart4_init                               0x080026d1   Thumb Code    10  stp23.o(i.uart4_init)
+    AHBPrescTable                            0x080026e4   Data          16  system_stm32f4xx.o(.constdata)
+    APBPrescTable                            0x080026f4   Data           8  system_stm32f4xx.o(.constdata)
+    Region$$Table$$Base                      0x080026fc   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800271c   Number         0  anon$$obj.o(Region$$Table)
     uwTickFreq                               0x20000000   Data           1  stm32f4xx_hal.o(.data)
     uwTickPrio                               0x20000004   Data           4  stm32f4xx_hal.o(.data)
     uwTick                                   0x20000008   Data           4  stm32f4xx_hal.o(.data)
@@ -1376,9 +1376,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002764, Max: 0x00100000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00002760, Max: 0x00100000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00002720, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000271c, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1468,44 +1468,44 @@ Memory Map of the image
     0x08001da8   0x08001da8   0x0000010c   Code   RO         2615    i.UART_SetConfig    stm32f4xx_hal_uart.o
     0x08001eb4   0x08001eb4   0x00000036   Code   RO         2617    i.UART_Start_Receive_IT  stm32f4xx_hal_uart.o
     0x08001eea   0x08001eea   0x00000072   Code   RO         2618    i.UART_WaitOnFlagUntilTimeout  stm32f4xx_hal_uart.o
-    0x08001f5c   0x08001f5c   0x00000118   Code   RO         2960    i.USART1_IRQHandler  bsp_uart.o
-    0x08002074   0x08002074   0x00000080   Code   RO         2961    i.USART2_IRQHandler  bsp_uart.o
-    0x080020f4   0x080020f4   0x000000e0   Code   RO         2962    i.USART3_IRQHandler  bsp_uart.o
-    0x080021d4   0x080021d4   0x00000110   Code   RO         2963    i.USART6_IRQHandler  bsp_uart.o
-    0x080022e4   0x080022e4   0x00000002   Code   RO          339    i.UsageFault_Handler  stm32f4xx_it.o
-    0x080022e6   0x080022e6   0x00000020   Code   RO         2169    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x08002306   0x08002306   0x0000000e   Code   RO         3159    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08002314   0x08002314   0x00000002   Code   RO         3160    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08002316   0x08002316   0x0000000e   Code   RO         3161    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08002324   0x08002324   0x000000a4   Code   RO         3076    i.data_process      stp23.o
-    0x080023c8   0x080023c8   0x000001c4   Code   RO           15    i.esp_ap_init       main.o
-    0x0800258c   0x0800258c   0x00000050   Code   RO           17    i.main              main.o
-    0x080025dc   0x080025dc   0x00000070   Code   RO         2965    i.send_lidar_data   bsp_uart.o
-    0x0800264c   0x0800264c   0x00000044   Code   RO         2966    i.send_obstacle     bsp_uart.o
-    0x08002690   0x08002690   0x00000044   Code   RO         2967    i.send_xy           bsp_uart.o
-    0x080026d4   0x080026d4   0x00000014   Code   RO         3077    i.uart4_init        stp23.o
-    0x080026e8   0x080026e8   0x00000010   Data   RO         2924    .constdata          system_stm32f4xx.o
-    0x080026f8   0x080026f8   0x00000008   Data   RO         2925    .constdata          system_stm32f4xx.o
-    0x08002700   0x08002700   0x00000020   Data   RO         3157    Region$$Table       anon$$obj.o
+    0x08001f5c   0x08001f5c   0x0000010c   Code   RO         2960    i.USART1_IRQHandler  bsp_uart.o
+    0x08002068   0x08002068   0x00000080   Code   RO         2961    i.USART2_IRQHandler  bsp_uart.o
+    0x080020e8   0x080020e8   0x000000e0   Code   RO         2962    i.USART3_IRQHandler  bsp_uart.o
+    0x080021c8   0x080021c8   0x00000110   Code   RO         2963    i.USART6_IRQHandler  bsp_uart.o
+    0x080022d8   0x080022d8   0x00000002   Code   RO          339    i.UsageFault_Handler  stm32f4xx_it.o
+    0x080022da   0x080022da   0x00000020   Code   RO         2169    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x080022fa   0x080022fa   0x0000000e   Code   RO         3159    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08002308   0x08002308   0x00000002   Code   RO         3160    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0800230a   0x0800230a   0x0000000e   Code   RO         3161    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08002318   0x08002318   0x000000a4   Code   RO         3076    i.data_process      stp23.o
+    0x080023bc   0x080023bc   0x000001cc   Code   RO           15    i.esp_ap_init       main.o
+    0x08002588   0x08002588   0x00000050   Code   RO           17    i.main              main.o
+    0x080025d8   0x080025d8   0x00000070   Code   RO         2965    i.send_lidar_data   bsp_uart.o
+    0x08002648   0x08002648   0x00000044   Code   RO         2966    i.send_obstacle     bsp_uart.o
+    0x0800268c   0x0800268c   0x00000044   Code   RO         2967    i.send_xy           bsp_uart.o
+    0x080026d0   0x080026d0   0x00000014   Code   RO         3077    i.uart4_init        stp23.o
+    0x080026e4   0x080026e4   0x00000010   Data   RO         2924    .constdata          system_stm32f4xx.o
+    0x080026f4   0x080026f4   0x00000008   Data   RO         2925    .constdata          system_stm32f4xx.o
+    0x080026fc   0x080026fc   0x00000020   Data   RO         3157    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002720, Size: 0x00000a68, Max: 0x0001c000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800271c, Size: 0x00000a68, Max: 0x0001c000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08002720   0x0000000c   Data   RW         2328    .data               stm32f4xx_hal.o
-    0x2000000c   0x0800272c   0x00000004   Data   RW         2926    .data               system_stm32f4xx.o
-    0x20000010   0x08002730   0x00000014   Data   RW         2969    .data               bsp_uart.o
-    0x20000024   0x08002744   0x00000020   Data   RW         3081    .data               stp23.o
+    0x20000000   0x0800271c   0x0000000c   Data   RW         2328    .data               stm32f4xx_hal.o
+    0x2000000c   0x08002728   0x00000004   Data   RW         2926    .data               system_stm32f4xx.o
+    0x20000010   0x0800272c   0x00000014   Data   RW         2969    .data               bsp_uart.o
+    0x20000024   0x08002740   0x00000020   Data   RW         3081    .data               stp23.o
     0x20000044        -       0x00000048   Zero   RW          220    .bss                tim.o
     0x2000008c        -       0x00000168   Zero   RW          271    .bss                usart.o
     0x200001f4        -       0x00000380   Zero   RW         2968    .bss                bsp_uart.o
     0x20000574        -       0x000000f0   Zero   RW         3079    .bss                stp23.o
-    0x20000664   0x08002764   0x00000004   PAD
+    0x20000664   0x08002760   0x00000004   PAD
     0x20000668        -       0x00000400   Zero   RW            1    STACK               startup_stm32f407xx.o
 
 
-    Execution Region RW_IRAM2 (Exec base: 0x2001c000, Load base: 0x08002764, Size: 0x00000000, Max: 0x00004000, ABSOLUTE)
+    Execution Region RW_IRAM2 (Exec base: 0x2001c000, Load base: 0x08002760, Size: 0x00000000, Max: 0x00004000, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
@@ -1517,27 +1517,27 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1152        114          0         20        896       7017   bsp_uart.o
-       180         14          0          0          0       1011   gpio.o
-       684        170          0          0          0     693802   main.o
-        36          8        392          0       1024        840   startup_stm32f407xx.o
-       180         28          0         12          0       9433   stm32f4xx_hal.o
-       198         14          0          0          0      33831   stm32f4xx_hal_cortex.o
-       182          0          0          0          0       2111   stm32f4xx_hal_dma.o
-       516         46          0          0          0       2867   stm32f4xx_hal_gpio.o
-        48          6          0          0          0        866   stm32f4xx_hal_msp.o
-      1348         76          0          0          0       5276   stm32f4xx_hal_rcc.o
-       890         80          0          0          0       6982   stm32f4xx_hal_tim.o
-       228         28          0          0          0       2204   stm32f4xx_hal_tim_ex.o
-      1656         14          0          0          0      11480   stm32f4xx_hal_uart.o
-        32          6          0          0          0       4657   stm32f4xx_it.o
-       852         56          0         32        240       4745   stp23.o
-        16          4         24          4          0       1139   system_stm32f4xx.o
-       304         32          0          0         72       2387   tim.o
-       740         76          0          0        360       4544   usart.o
+      1140        112          0         20        896       6941   bsp_uart.o
+       180         14          0          0          0       1003   gpio.o
+       692        178          0          0          0     693678   main.o
+        36          8        392          0       1024        832   startup_stm32f407xx.o
+       180         28          0         12          0       9377   stm32f4xx_hal.o
+       198         14          0          0          0      33799   stm32f4xx_hal_cortex.o
+       182          0          0          0          0       2087   stm32f4xx_hal_dma.o
+       516         46          0          0          0       2835   stm32f4xx_hal_gpio.o
+        48          6          0          0          0        850   stm32f4xx_hal_msp.o
+      1348         76          0          0          0       5236   stm32f4xx_hal_rcc.o
+       890         80          0          0          0       6918   stm32f4xx_hal_tim.o
+       228         28          0          0          0       2184   stm32f4xx_hal_tim_ex.o
+      1656         14          0          0          0      11388   stm32f4xx_hal_uart.o
+        32          6          0          0          0       4593   stm32f4xx_it.o
+       852         56          0         32        240       4701   stp23.o
+        16          4         24          4          0       1115   system_stm32f4xx.o
+       304         32          0          0         72       2351   tim.o
+       740         76          0          0        360       4484   usart.o
 
     ----------------------------------------------------------------------
-      9250        772        448         68       2596     795192   Object Totals
+      9246        778        448         68       2596     794372   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          8          0          0          0          4          0   (incl. Padding)
 
@@ -1581,15 +1581,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      9568        788        448         68       2596     788612   Grand Totals
-      9568        788        448         68       2596     788612   ELF Image Totals
-      9568        788        448         68          0          0   ROM Totals
+      9564        794        448         68       2596     787792   Grand Totals
+      9564        794        448         68       2596     787792   ELF Image Totals
+      9564        794        448         68          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                10016 (   9.78kB)
+    Total RO  Size (Code + RO Data)                10012 (   9.78kB)
     Total RW  Size (RW Data + ZI Data)              2664 (   2.60kB)
-    Total ROM Size (Code + RO Data + RW Data)      10084 (   9.85kB)
+    Total ROM Size (Code + RO Data + RW Data)      10080 (   9.84kB)
 
 ==============================================================================
 
